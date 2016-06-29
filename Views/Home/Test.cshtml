@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+
+}
+<head>
+  
+</head>
+
+<div data-ng-app="app" data-ng-controller="DemoController as vm">
+    @*<h1>@RDLCReport.Resources.Resources.WhatsYourName</h1>*@
+    <h1 translate>WhatsYourName</h1>
+    <p>&nbsp;</p>
+    <p>Change language to:</p>
+    <a ng-click="vm.setLanguage('en')">English</a>
+    <a ng-click="vm.setLanguage('es')">Spanish</a>
+    <a ng-click="vm.setLanguage('fr')">French</a>
+</div>
+

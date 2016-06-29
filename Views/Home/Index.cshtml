@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/foundation/foundation.js"></script>
+    <script src="~/Scripts/foundation/foundation.topbar.js"></script>
+    <script src="~/Scripts/foundation/foundation.reveal.js"></script>
+    
+ 
+</head>
+<body ng-app="app">
+    <div class="contain-to-grid">
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area ">
+                <li class="name">
+                    <img src="~/Images/images1.jpg" class="img" />
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li>
+                        <a href="~/Home/Index" translate>Home</a>
+                    </li>
+                    <li>
+                        <a href="#" data-reveal-id="myModal" translate>About</a>
+                    </li>
+                    <li>
+                        <a href="#" translate>Contact</a>
+                    </li>
+                    <li>
+                        <a href="~/Home/SignUp" translate>Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#" translate>Login</a>
+                    </li>
+                    @*<li class="has-form">
+                            <div class="row collapse">
+                                <div class="large-12 small-9 columns">
+                                    <input type="text" ng-model="searchKeyword" placeholder="Find some Stuff." />
+                                </div>
+                            </div>
+
+                        </li>*@
+                </ul>
+                @*<ul class="left">
+                        <li>
+                            <a href="#">Main</a>
+                        </li>
+                        <li>
+                            <a href="#">Main1</a>
+                        </li>
+                    </ul>*@
+            </section>
+           
+        </nav>
+
+    </div>
+    
+    <div data-ng-controller="customerController as vm">
+        <div class="row">
+            <div class="small-12 columns">
+                <strong class="error">{{ error }}</strong>
+                <input type="text" ng-model="vm.searchKeyword" placeholder="{{'Find some Stuff'|translate}}"/>
+                <p data-ng-hide="vm.addMode"><a data-ng-click="vm.toggleAdd()" href="javascript:;" translate>Add New</a>
+                    <div data-ng-app="app" data-ng-controller="DemoController as vm">
+                       
+                        <a ng-click="vm.setLanguage('en')">English</a>|
+                        <a ng-click="vm.setLanguage('es')">Spanish</a>|
+                        <a ng-click="vm.setLanguage('fr')">French</a>|
+                        <a ng-click="vm.setLanguage('ja')">Japanese</a>
+                    </div>
+                </p>
+                
+                <form class="form-signin" name="addCustomer" data-ng-show="vm.addMode">
+                    @*<label for="cid">ID:</label>
+                        <input type="text" id="cid" placeholder="please enter id" data-ng-model="newcustomer.Id" required />*@
+                    <label for="cname" translate>To Do</label>
+                    <input type="text" id="cname" placeholder="{{'please enter your work'|translate}}" data-ng-model="vm.newcustomer.Name" required />
+                    <label for="address" translate>Summary</label>
+                    <input type="text" id="address" placeholder="{{'please enter your Summary'|translate}}" data-ng-model="vm.newcustomer.Address" required />
+
+                    <br />
+                    <input type="submit" value="{{'Add'|translate}}" data-ng-click="vm.add()" class="btn btn-primary"/>
+                    <input type="button" value="{{'Cancel'|translate}}" data-ng-click="vm.toggleAdd()" class="btn btn-primary"/>
+                    <br />
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns">
+                <table class="container">
+                    <tbody>
+                        <tr class="form-signin">
+                            <th translate>To Do</th>
+                            <th translate>Summary</th>
+                            <th></th>
+
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="form-signin" data-ng-repeat="customer in vm.customers| filter: vm.searchKeyword ">
+                            <td>
+                                <p data-ng-hide="customer.editMode">{{ customer.Name|translate }}</p>
+                                <input data-ng-show="customer.editMode" type="text" data-ng-model="customer.Name" translate/>
+                            </td>
+                            <td>
+                                <p data-ng-hide="customer.editMode">{{ customer.Address|translate }}</p>
+                                <input data-ng-show="customer.editMode" type="text" data-ng-model="customer.Address" translate/>
+                            </td>
+                            <td>
+                                <p data-ng-hide="customer.editMode"><a data-ng-click="vm.toggleEdit(customer)" href="javascript:;" translate>Edit</a> |<a data-ng-click="vm.deletecustomer(customer)" href="javascript:;" translate>Delete</a></p>
+                                <p data-ng-show="customer.editMode"><a data-ng-click="vm.save(customer)" href="javascript:;" translate>Save</a> |<a data-ng-click="vm.toggleEdit(customer)" href="javascript:;" translate>Cancel</a></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div data-ng-app="app" class="large-12 columns" data-ng-controller="TodoController">
+                <span>{{ remaining() }} of {{ todos.length }} remaining</span>
+                <p>[ <a href="" data-ng-click="delete()">Remove Completed Items</a> ]</p>
+
+                <ul>
+                    <li data-ng-repeat="todo in todos">
+                        <input type="checkbox" data-ng-model="todo.done">
+                      <a href="~/Home/LocalStorage" target="_blank"><span class="done-{{ todo.done }}">{{ todo.text }}</span></a>
+                    </li>
+                </ul>
+
+                <form data-ng-submit="addTodo()" class="large-12 columns">
+                    <input type="text" data-ng-model="todoText" placeholder="Enter new ToDo item" />
+                    <br />
+                    <input type="submit" value="Add Task" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <p translate>Since 1998, Cyber Group has been providing high quality product engineering services to businesses throughout a wide array of industries. Our development teams have extensive knowledge and experience to provide our clients with superb engineering service. We believe the businesses we work with are more than just our customers; they are our partners. As such, we treat every project as if it were our own, providing valuable results all with low costs and faster entry to market. Cyber Group: Leave your engineering to us.</p>
+    </div>
+    <script type="text/javascript">
+        $(document).foundation();
+    </script>
+

@@ -1,0 +1,190 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/foundation/foundation.js"></script>
+    <script src="~/Scripts/foundation/foundation.topbar.js"></script>    
+    <script src="~/Scripts/foundation/foundation.offcanvas.js"></script>
+
+    <script src="~/Scripts/foundation/foundation.reveal.js"></script>
+</head>
+<link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+<link href="~/sass/icon.css" rel="stylesheet" />
+
+
+
+<div class="off-canvas-wrap move-right" data-offcanvas>
+    <div class="inner-wrap">
+
+        <a class="left-off-canvas-toggle" href="#"><i class="fi-list"></i></a>
+
+        <!-- Off Canvas Menu -->
+        <aside class="left-off-canvas-menu">
+
+            <div class="icon-bar vertical five-up">
+                <a href="~/Home/Index" class="item">
+                    <i class="fi-home"></i>
+                    @*<img src="~/Images/svgs/fi-home.svg" />*@
+                    <label>Home</label>
+                </a>
+                <a class="item">
+                    <i class="fi-bookmark"></i>
+                    @*<img src="~/Images/svgs/fi-bookmark.svg" />*@
+                    <label>Bookmark</label>
+                </a>
+                <a class="item">
+                    <i class="fi-info"></i>
+                    @*<img src="~/Images/svgs/fi-info.svg" />*@
+                    <label>Info</label>
+                </a>
+                <a class="item">
+                    <i class="fi-mail"></i>
+                    @*<img src="~/Images/svgs/fi-mail.svg" />*@
+                    <label>Mail</label>
+                </a>
+                <a class="item">
+                    <i class="fi-like"></i>
+                    @*<img src="~/Images/svgs/fi-like.svg" />*@
+                    <label>Like</label>
+                </a>
+            </div>
+
+        </aside>
+        <img src="~/Images/images.png" class="img"/>       
+        
+        <!-- main content goes here -->
+        <header class="row">
+            <div class="small-12 columns">
+                <h1 class="text-center">Create an account</h1>
+            </div>
+           Already have an account- <a href="#" data-reveal-id="myModal">Login</a>
+        </header>
+
+        <form class="form-menu">
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>
+                        Full Name
+                        <input type="text" placeholder="Full Name" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-4 columns">
+                    <label>
+                        Username
+                        <input type="text" placeholder="Username" />
+                    </label>
+                </div>
+                <div class="large-4 columns">
+                    <label>
+                        Password
+                        <input type="text" placeholder="Password" />
+                    </label>
+                </div>
+                <div class="large-4 columns">
+                    <div class="row collapse">
+                        <label>Email</label>
+                        <div class="small-9 columns">
+                            <input type="email" placeholder="Email" />
+                        </div>
+                        <div class="small-3 columns">
+                            <span class="postfix">.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>
+                        Select City
+                        <select>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Dehradun">Dehradun</option>
+                            <option value="Nainital">Nainital</option>
+                            <option value="Mumbai">Mumbai</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>Are you</label>
+                    <input type="radio" name="male" value="Male" id="male"><label for="male">Male</label>
+                    <input type="radio" name="female" value="Female" id="female"><label for="female">Female</label>
+                </div>
+                <div class="large-6 columns">
+                    <label>Hobby</label>
+                    <input id="checkbox1" type="checkbox"><label for="checkbox1">Cricket</label>
+                    <input id="checkbox2" type="checkbox"><label for="checkbox2">Hockey 2</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label>
+                        <input type="submit" id="test" class="button" value="Create" />
+                    </label>
+                </div>
+            </div>
+
+        </form>
+
+
+        <!-- close the off-canvas menu -->
+        <a class="exit-off-canvas"></a>
+
+    </div>
+</div>
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <div class="form-menu">
+        <div class="row">
+            <h3 id="modalTitle">Please Login...</h3>
+            <div class="large-12 columns">
+                <label>
+                    Username
+                    <input type="text" placeholder="Username" />
+                </label>
+            </div>
+            <div class="large-12 columns">
+                <label>
+                    Password
+                    <input type="text" placeholder="Password" />
+                </label>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <label>
+                    <input type="submit" id="test1" class="button" value="Login" />
+                </label>
+            </div>
+        </div>
+
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+   
+</div>
+<script type="text/javascript">
+    $(document).foundation();
+    function sideNav() {
+        if ($(window).width() < 769) {
+            $('.off-canvas-wrap').removeClass('move-right');
+            $('.left-off-canvas-toggle').show();
+        } else {
+            $('.off-canvas-wrap').addClass('move-right');
+            $('.left-off-canvas-toggle').hide();
+        }
+    }
+
+    $(window).resize(function () {
+        sideNav();
+    });
+</script>

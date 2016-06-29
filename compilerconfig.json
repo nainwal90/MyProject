@@ -1,0 +1,58 @@
+﻿[
+  {
+    "outputFile": "Content/Site.css",
+    "inputFile": "Content/Site.scss"
+  },
+  {
+    "outputFile": "Content/css/Site.css",
+    "inputFile": "Content/css/Site.scss"
+  },
+  {
+    "outputFile": "Content/css/_foundation.mvc.css",
+    "inputFile": "Content/css/_foundation.mvc.scss"
+  },
+  {
+    "outputFile": "Content/css/_foundation.css",
+    "inputFile": "Content/css/_foundation.scss"
+  },
+  {
+    "outputFile": "Content/foundation/_functions.css",
+    "inputFile": "Content/foundation/_functions.scss"
+  },
+  {
+    "outputFile": "Content/css/_normalize.css",
+    "inputFile": "Content/css/_normalize.scss"
+  },
+  {
+    "outputFile": "sass/Site.css",
+    "inputFile": "sass/Site.scss"
+  },
+  {
+    "outputFile": "sass/_foundation.css",
+    "inputFile": "sass/_foundation.scss"
+  },
+  {
+    "outputFile": "sass/_foundation.mvc.css",
+    "inputFile": "sass/_foundation.mvc.scss"
+  },
+  {
+    "outputFile": "sass/_normalize.css",
+    "inputFile": "sass/_normalize.scss"
+  },
+  {
+    "outputFile": "sass/yogesh.css",
+    "inputFile": "sass/yogesh.scss"
+  },
+  {
+    "outputFile": "sass/foundation/components/_top-bar.css",
+    "inputFile": "sass/foundation/components/_top-bar.scss"
+  },
+  {
+    "outputFile": "sass/icon.css",
+    "inputFile": "sass/icon.scss"
+  },
+  {
+    "outputFile": "sass/foundation/components/_icon-bar.css",
+    "inputFile": "sass/foundation/components/_icon-bar.scss"
+  }
+]

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+             
+    @Styles.Render("~/sass/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+   
+    @*<div class="small-12 columns">
+                        <div class="row collapse">
+                            <div class="large-12 small-9 columns">
+                                <input type="text" ng-model="searchKeyword" placeholder="Find some Stuff." />
+                            </div>
+                        </div>
+        </div>*@
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
+                @*<p>&copy;</p>*@
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/foundation")
+        @Scripts.Render("~/bundles/angularjs")
+
+        @RenderSection("scripts", required: false)
+
+</body>
+</html>

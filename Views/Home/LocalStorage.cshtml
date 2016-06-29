@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "LocalStorage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    @*<div data-ng-app="app" class="large-12 columns" data-ng-controller="TodoController">
+                <span>{{ remaining() }} of {{ todos.length }} remaining</span>
+                <p>[ <a href="" data-ng-click="delete()">Remove Completed Items</a> ]</p>
+
+            <ul class="unstyled">
+                <li data-ng-repeat="todo in todos track by $index">
+                    <input type="checkbox" data-ng-model="todo.done">
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+                </li>
+            </ul>
+
+            <form data-ng-submit="addTodo()" class="large-12 columns">
+                <input type="text" data-ng-model="todoText" placeholder="Enter new ToDo item" />
+                <br />
+                <input type="submit" value="Add Task" />
+            </form>
+    </div>*@
+<div class="row">
+    <div data-ng-app="app" class="large-12 columns" data-ng-controller="TodoController">
+        <span>{{ remaining() }} of {{ todos.length }} remaining</span>
+        <p>[ <a href="" data-ng-click="delete()">Remove Completed Items</a> ]</p>
+
+        <ul>
+            <li data-ng-repeat="todo in todos">
+                <input type="checkbox" data-ng-model="todo.done">
+                <a href="~/Home/LocalStorage"><span class="done-{{ todo.done }}">{{ todo.text }}</span></a>
+            </li>
+        </ul>
+
+        <form data-ng-submit="addTodo()" class="large-12 columns">
+            <input type="text" data-ng-model="todoText" placeholder="Enter new ToDo item" />
+            <br />
+            <input type="submit" value="Add Task" />
+        </form>
+    </div>
+</div>
+ 
+

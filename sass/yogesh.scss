@@ -1,0 +1,49 @@
+﻿
+@import "_normalize.scss";
+@import "_foundation.scss";
+@import "_foundation.mvc.scss";
+@import "foundation/components/icon-bar";
+
+
+.form-signin
+{
+   
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: $snow;
+    border: 1px solid $black;
+    border-color: green;
+
+    input[type="text"]
+    {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+    }
+} 
+.container { 
+    width: 100%;
+}
+.form-menu
+{
+    max-width: 1000px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: $snow;
+    border: 1px solid $black;
+    }
+
+.myExtendclass{
+  @extend .form-menu;
+  
+}
+
+.img{
+  height:50px;
+  width:200px;
+}
+
+
+
+
